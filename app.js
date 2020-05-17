@@ -18,10 +18,8 @@ var commentRoutes = require('./routes/comments'),
 
 // MONGOOSE SETUP
 
-console.log(process.env.DATABASEURL);
-
 mongoose
-	.connect('process.env.DATABASEURL', {
+	.connect(process.env.DATABASEURL, {
 		useNewUrlParser: true,
 		useCreateIndex: true,
 		useUnifiedTopology: true
