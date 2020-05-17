@@ -1,4 +1,4 @@
-var express = require('express'),
+let express = require('express'),
 	app = express(),
 	bodyParser = require('body-parser'),
 	mongoose = require('mongoose'),
@@ -17,13 +17,21 @@ var commentRoutes = require('./routes/comments'),
 	authRoutes = require('./routes/auth');
 
 // MONGOOSE SETUP
-mongoose.connect(
-	'mongodb+srv://jgradio64:0HHTmo0EC5x02dNk@cluster0-eferr.mongodb.net/yelp_camp?retryWrites=true&w=majority',
-	{
-		useNewUrlParser: true,
-		useUnifiedTopology: true
-	}
-);
+mongoose
+	.connect(
+		'mongodb+srv://jgradio64:0HHTmo0EC5x02dNk@cluster0-eferr.mongodb.net/yelp_camp?retryWrites=true&w=majority',
+		{
+			useNewUrlParser: true,
+			useCreateIndex: true,
+			useUnifiedTopology: true
+		}
+	)
+	.then(() => {
+		console.log('Connected to db');
+	})
+	.catch((err) => {
+		console('ERROR', err.message);
+	});
 
 // SOLVE MONGOOSE DEPRICATION
 mongoose.set('useNewUrlParser', true);
