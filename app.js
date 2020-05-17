@@ -36,22 +36,6 @@ mongoose
 // 	useUnifiedTopology: true
 // });
 
-// mongoose
-// 	.connect(
-// 		'mongodb+srv://jgradio64:0HHTmo0EC5x02dNk@cluster0-eferr.mongodb.net/yelp_camp?retryWrites=true&w=majority',
-// 		{
-// 			useNewUrlParser: true,
-// 			useCreateIndex: true,
-// 			useUnifiedTopology: true
-// 		}
-// 	)
-// 	.then(() => {
-// 		console.log('Connected to db');
-// 	})
-// 	.catch((err) => {
-// 		console('ERROR', err.message);
-// 	});
-
 // SOLVE MONGOOSE DEPRICATION
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
