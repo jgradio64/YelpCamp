@@ -17,10 +17,13 @@ var commentRoutes = require('./routes/comments'),
 	authRoutes = require('./routes/auth');
 
 // MONGOOSE SETUP
-mongoose.connect('mongodb://localhost:27017/yelpCamp', {
-	useNewUrlParser: true,
-	useUnifiedTopology: true
-});
+mongoose.connect(
+	'mongodb+srv://jgradio64:0HHTmo0EC5x02dNk@cluster0-eferr.mongodb.net/yelp_camp?retryWrites=true&w=majority',
+	{
+		useNewUrlParser: true,
+		useUnifiedTopology: true
+	}
+);
 
 // SOLVE MONGOOSE DEPRICATION
 mongoose.set('useNewUrlParser', true);
