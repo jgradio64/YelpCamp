@@ -17,7 +17,6 @@ var commentRoutes = require('./routes/comments'),
 	authRoutes = require('./routes/auth');
 
 // MONGOOSE SETUP
-
 let url = process.env.DATABASEURL || 'mongodb://localhost:27017/yelpCamp';
 
 mongoose
@@ -32,11 +31,6 @@ mongoose
 	.catch((err) => {
 		console('ERROR', err.message);
 	});
-
-// mongoose.connect('mongodb://localhost:27017/yelpCamp', {
-// 	useNewUrlParser: true,
-// 	useUnifiedTopology: true
-// });
 
 // SOLVE MONGOOSE DEPRICATION
 mongoose.set('useNewUrlParser', true);
