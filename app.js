@@ -47,7 +47,7 @@ app.use(flash());
 // PASSPORT CONFIGURATION
 app.use(
 	require('express-session')({
-		secret: 'Ning is an awesome cat',
+		secret: process.env.SECRET,
 		resave: false,
 		saveUninitialized: false
 	})
