@@ -12,7 +12,7 @@ let express = require('express'),
 	Comment = require('./models/comment');
 
 // require routes
-var commentRoutes = require('./routes/comments'),
+const commentRoutes = require('./routes/comments'),
 	campgroundRoutes = require('./routes/campgrounds'),
 	authRoutes = require('./routes/auth');
 
@@ -29,7 +29,7 @@ mongoose
 		console.log('Connected to db');
 	})
 	.catch((err) => {
-		console('ERROR', err.message);
+		console.log('ERROR', err.message);
 	});
 
 // SOLVE MONGOOSE DEPRICATION
@@ -65,15 +65,13 @@ app.use(function(req, res, next) {
 	next();
 });
 
-// seedDB(); // SEED THE DATABAST
-
 // Require routes
 app.use('/campgrounds', campgroundRoutes);
 app.use('/campgrounds/:id/comments', commentRoutes);
 app.use('/', authRoutes);
 
 // Tell express to listen
-var port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
 	console.log('YelpCamp server has started');
 });
